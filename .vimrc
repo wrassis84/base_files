@@ -1,7 +1,7 @@
 " This is the VIM configuration file.
 " After modify, run ':so %' to reload them.
 " (This works only if .vimrc is the current file being edited)
-" Out of vimrc, run ':source ~/.vimrc' or simply ':so ~/.vimrc'
+" Out of .vimrc, run ':source ~/.vimrc' or simply ':so ~/.vimrc' or press F12
 
 " Enables Syntax color:
 syntax on
