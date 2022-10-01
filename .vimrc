@@ -169,17 +169,17 @@ vnoremap <leader><Space> :call ToggleComment()<cr>
 " Creating a function for replace a word under cursor:
 
 function ReplaceAll(rtype)
-  let x = expand('<cword>')
-  if !empty(x)
-    let y = input('Replace "' . x .'" for: ')
-    if !empty(y)
-      let l = line('.')
+  let word = expand('<cword>')
+  if !empty(word)
+    let rword = input('Replace "' . word . '" for: ')
+    if !empty(rword)
+      let lin = line('.')
       if a:rtype == 'all'
-      	execute '%s/' . x . '/' . y . '/g'
+      	execute '%s/' . word . '/' . rword . '/g'
       elseif a:rtype == 'line'
-      	execute 's/' . x . '/' . y . '/g'
+      	execute 's/' . word . '/' . rword . '/g'
       endif
-      execute l
+      execute lin
     endif
   endif
 endfunction
