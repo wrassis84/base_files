@@ -66,6 +66,7 @@ au BufNewFile,BufRead *.html set ft=html
 autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
 
 " Load a customize header for .sh files:
+" NOTE: the "header.sh" file must be located on "$HOME/.vim/" dir.
 au bufnewfile *.sh 0r /home/william/.vim/header.sh
 
 " Enable auto completion menu after pressing TAB:
