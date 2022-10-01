@@ -162,3 +162,24 @@ endfunction
 " In this case ',' (comma) would be the new <leader> key. ;)
 nnoremap <leader><Space> :call ToggleComment()<cr>
 vnoremap <leader><Space> :call ToggleComment()<cr>
+
+" Creating a function for replace a word under cursor:
+
+function ReplaceAll(rtype)
+  let x = expand('<cword>')
+  if !empty(x)
+    let y = input('Replace "' . x .'" for: ')
+    if !empty(y)
+      let l = line('.')
+      if a:rtype == 'all'
+      	execute '%s/' . x . '/' . y . '/g'
+      elseif a:rtype == 'line'
+      	execute 's/' . x . '/' . y . '/g'
+      endif
+      execute l
+    endif
+  endif
+endfunction
+
+nnoremap <c-r>a :call ReplaceAll('all')<cr>
+nnoremap <c-r>l :call ReplaceAll('line')<cr>
