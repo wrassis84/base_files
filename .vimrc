@@ -13,7 +13,7 @@ set laststatus=2
 set is hls ic scs magic	
 
 "Enables ShowMatch - show the match braces, curly braces and parenthesis:
-set sm			
+set showmatch	
 
 " Enables AutoWrite (Auto saving):
 set aw
@@ -93,10 +93,14 @@ vmap <F12> <Esc>:source ~/.vimrc<cr>
 imap <F12> <Esc>:source ~/.vimrc<cr>
 
 " Map the keys CTRL+DOWN to move lines down (on normal mode):
-nmap <C-Down> ddp
+nmap <C-Down> ddp==
+vmap <C-Down> ddp==
+imap <C-Down> ddp==
 
 " Map the keys CTRL+UP to move lines up (on normal mode):
-nmap <C-Up> ddkP
+nmap <C-Up> ddkP==
+vmap <C-Up> ddkP==
+imap <C-Up> ddkP==
 
 " Map F3 to toggle highlight search:
 nnoremap <F3> :set hlsearch!<CR>
@@ -148,7 +152,7 @@ function! ToggleComment()
             end
         end
     else
-        echo ":( No comment leader found for filetype!"
+        echo ":( No comment leader found for this filetype!"
     end
 endfunction
 
