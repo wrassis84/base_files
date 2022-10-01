@@ -167,7 +167,6 @@ nnoremap <leader><Space> :call ToggleComment()<cr>
 vnoremap <leader><Space> :call ToggleComment()<cr>
 
 " Creating a function for replace a word under cursor:
-
 function ReplaceAll(rtype)
   let word = expand('<cword>')
   if !empty(word)
